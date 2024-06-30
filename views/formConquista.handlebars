@@ -1,0 +1,26 @@
+{{#if conquista}}
+  <h1>Atualizar Conquista</h1>
+  <form action="/conquistas/{{conquista.id}}/update" method="post">
+{{else}}
+  <h1>Cadastrar Conquista</h1>
+  <form action="/conquistas/novo" method="post">
+{{/if}}
+
+  <div>
+    <label for="titulo">Título</label>
+    <input type="text" id="titulo" name="titulo" value="{{conquista.titulo}}" />
+  </div>
+  <div>
+    <label for="descricao">Descrição</label>
+    <input type="text" id="descricao" name="descricao" value="{{conquista.descricao}}" />
+  </div>
+  <div>
+    <label for="jogo_id">ID do Jogo</label>
+    <input type="number" id="jogo_id" name="jogo_id" value="{{conquista.jogo_id}}" />
+  </div>
+  {{#if conquista}}
+    <input type="submit" value="Salvar">
+  {{else}}
+    <input type="submit" value="Cadastrar" />
+  {{/if}}
+</form>
